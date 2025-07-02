@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сімейний табір РХС</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600"><defs><pattern id="mountains" patternUnits="userSpaceOnUse" width="400" height="200"><polygon fill="%23228B22" points="0,200 50,120 100,150 150,80 200,110 250,60 300,90 350,40 400,70 400,200"/><polygon fill="%2332CD32" points="0,200 40,160 80,180 120,140 160,160 200,120 240,140 280,100 320,120 360,80 400,100 400,200"/></pattern></defs><rect width="400" height="600" fill="url(%23mountains)"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 15px;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(5px);
+            border-radius: 15px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: linear-gradient(45deg, #4a90e2, #357abd);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        
+        .header h1 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .header .subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+            font-style: italic;
+        }
+        
+        .date-section {
+            margin-bottom: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 15px;
+            border-left: 4px solid #FFD700;
+        }
+        
+        .date-header {
+            font-size: 16px;
+            font-weight: bold;
+            color: #FFD700;
+            margin-bottom: 10px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .schedule-item {
+            display: flex;
+            margin-bottom: 8px;
+            padding: 8px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 6px;
+            border-left: 2px solid rgba(255,215,0,0.6);
+        }
+        
+        .time {
+            font-weight: bold;
+            color: #FFD700;
+            min-width: 50px;
+            font-size: 12px;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+        
+        .activity {
+            font-size: 12px;
+            line-height: 1.4;
+            flex-grow: 1;
+        }
+        
+        .special-note {
+            font-style: italic;
+            color: #98fb98;
+            font-size: 11px;
+            margin-top: 3px;
+        }
+        
+        .highlight {
+            background: rgba(255,215,0,0.2);
+            border-left-color: #FFD700;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            background: linear-gradient(45deg, #228B22, #32CD32);
+            border-radius: 10px;
+            font-size: 12px;
+        }
+        
+        .footer .organization {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .cross {
+            font-size: 20px;
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 380px) {
+            .container {
+                padding: 10px;
+                margin: 5px;
+            }
+            
+            .header h1 {
+                font-size: 18px;
+            }
+            
+            .time {
+                min-width: 45px;
+                font-size: 11px;
+            }
+            
+            .activity {
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="cross">✝</div>
+            <h1>ХРИСТИЯНСЬКИЙ ТАБІР ДЛЯ СІМЕЙ У ГОШЕВІ</h1>
+            <div class="subtitle">18-20.07</div>
+        </div>
+        
+        <div class="date-section">
+            <div class="date-header">18.07 П'ятниця</div>
+            <div class="schedule-item highlight">
+                <div class="time">7:30</div>
+                <div class="activity">Літургія в ц.Св.Юрія</div>
+            </div>
+            <div class="schedule-item">
+                <div class="time">8:15</div>
+                <div class="activity">Виїзджаємо від церкви</div>
+            </div>
+            <div class="schedule-item">
+                <div class="time">13:00</div>
+                <div class="activity">Поселення</div>
+            </div>
+            <div class="schedule-item">
+                <div class="time">14:00</div>
+                <div class="activity">ОБІД</div>
+            </div>
+            <div class="schedule-item">
+                <div class="time">15:30</div>
+                <div class="activity">Знайомство, перша наука "Бог найкращий приятель людини"
+                    <div class="special-note">Для дітей: катехизація та час з аніматорами</div>
+                </div>
+            </div>
+            <div class="schedule-item">
+                <div class="time">17:30</div>
+                <div class="activity">Веселі старти для сімей</div>
+            </div>
+            <div class="schedule-item">
+                <div class="time">19:00</div>
+                <div class="activity">ВЕЧЕРЯ</div>
+            </div>
+            <div class="schedule-item">
+                <div class="time">19:45</div>
+                <div class="activity">Вільний час / Сповідь / Духовна розмова з о.Йоаном</div>
+            </div>
+            <div class="schedule-item highlight">
+                <div class="time">20:50</div>
+                <div class="activity">Адорація, вечірня молитва</div>
+            </div>
+            <div class="schedule-item">
+                <div class="time">22:00</div>
+                <div class="activity">Посиденьки для дорослих / діти сон</div>
+            </div>
+        </div>
+        
+        <div class="date-section">
+            <div class="date-header">19.07 Субота</div>
+            <div class="schedule-item highlight">
+                <div class="time">9:00</div>
+                <div class="activity">Літургія</div>
+            </div>
+            <div class="schedule-item">
+                <div class="time">10:00</div>
+                <div class="activity">СНІДАНОК</div>
+            </div>
+            <div class="schedule-item">
+                <div class="time">11:00</div>
+                <div class="activity">2-га наука "Бог найкращий приятель людини"
+                    <div class="special-note">Для дітей: катехизація та ігри з аніматорами</div>
+                </div>
+            </div>
+            <div class="schedule-item">
+                <div class="time">13:00</div>
+                <div class="activity">Веселі ігри (волейбол для чоловіків та дітей 9+; ігри для матусь з молодшими дітьми)</div>
+            </div>
+            <div class="schedule-item">
+                <div class="time">14:00</div>
+                <div class="activity">ОБІД
+                    <div class="special-note">Вільний час, сповідь, духовна розмова з о.Йоаном</div>
+                </div>
+            </div>
+            <div class="schedule-item">
+                <div class="time">16:00</div>
+                <div class="activity">Майстер-клас для сімей</div>
+            </div>
+            <div class="schedule-item">
+                <div class="time">17:00</div>
+                <div class="activity">Романтичне побачення для подружжя / фільм для жінок
+                    <div class="special-note">Для дітей: час з аніматорами</div>
+                </div>
+            </div>
+            <div class="schedule-item">
+                <div class="time">19:00</div>
+                <div class="activity">ВЕЧЕРЯ</div>
+            </div>
+            <div class="schedule-item highlight">
+                <div class="time">19:45</div>
+                <div class="activity">Квест для сімей; ватра; смаження ковбасок; пісні біля вогню та молитва Прослави</div>
+            </div>
+        </div>
+        
+        <div class="date-section">
+            <div class="date-header">20.07 Неділя</div>
+            <div class="schedule-item highlight">
+                <div class="time">9:00</div>
+                <div class="activity">Літургія</div>
+            </div>
+            <div class="schedule-item">
+                <div class="time">10:00</div>
+                <div class="activity">СНІДАНОК</div>
+            </div>
+            <div class="schedule-item">
+                <div class="time">11:00</div>
+                <div class="activity">3-тя наука "Бог найкращий приятель людини"
+                    <div class="special-note">Для дітей: катехизація та час з аніматорами</div>
+                </div>
+            </div>
+            <div class="schedule-item">
+                <div class="time">13:00</div>
+                <div class="activity">Виселення</div>
+            </div>
+            <div class="schedule-item">
+                <div class="time">14:00</div>
+                <div class="activity">ОБІД</div>
+            </div>
+            <div class="schedule-item">
+                <div class="time">14:45</div>
+                <div class="activity">Виїзд додому
+                    <div class="special-note">По дорозі: скелі Довбуша та Карпатський трамвайчик (за бажанням)</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="organization">РУХ ХРИСТИЯНСЬКИХ СІМЕЙ</div>
+        </div>
+    </div>
+</body>
+</html>
