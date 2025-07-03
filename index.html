@@ -120,13 +120,37 @@ html {
         }
         
         .footer {
-            text-align: center;
-            margin-top: 20px;
-            padding: 15px;
-            background: linear-gradient(45deg, #228B22, #32CD32);
-            border-radius: 10px;
-            font-size: 12px;
-        }
+    text-align: center;
+    margin-top: 20px;
+    padding: 0;
+    font-size: 12px;
+}
+
+.facebook-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: #1877f2;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3);
+}
+
+.facebook-button:hover {
+    background: #166fe5;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(24, 119, 242, 0.4);
+}
+
+.facebook-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(24, 119, 242, 0.3);
+}
         
         .footer .organization {
             font-weight: bold;
@@ -294,8 +318,10 @@ html {
         </div>
         
         <div class="footer">
-            <div class="organization">РУХ ХРИСТИЯНСЬКИХ СІМЕЙ</div>
-        </div>
+    <a href="https://www.facebook.com/groups/258049066659625" target="_blank" class="facebook-button">
+        Приєднуйтеся до нас у Facebook
+    </a>
+</div>
     </div>
 </body>
 </html>
