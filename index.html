@@ -2,7 +2,7 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Сімейний табір РХС</title>
     <style>
         * {
@@ -11,27 +11,39 @@
             box-sizing: border-box;
         }
         
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600"><defs><pattern id="mountains" patternUnits="userSpaceOnUse" width="400" height="200"><polygon fill="%23228B22" points="0,200 50,120 100,150 150,80 200,110 250,60 300,90 350,40 400,70 400,200"/><polygon fill="%2332CD32" points="0,200 40,160 80,180 120,140 160,160 200,120 240,140 280,100 320,120 360,80 400,100 400,200"/></pattern></defs><rect width="400" height="600" fill="url(%23mountains)"/></svg>');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+        html {
+    background: #1a1a1a !important;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #1a1a1a !important;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: env(safe-area-inset-bottom, 100px);
+    margin: 0;
+    padding-left: env(safe-area-inset-left, 0);
+    padding-right: env(safe-area-inset-right, 0);
+    overflow-x: hidden;
+}
         
-        .container {
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 15px;
-            background: rgba(0,0,0,0.7);
-            backdrop-filter: blur(5px);
-            border-radius: 15px;
-            margin-top: 10px;
-            margin-bottom: 90px;
-        }
+       .container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 15px;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('Goshivs.jpeg');
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    margin-top: 10px;
+    margin-bottom: 120px;
+    position: relative;
+}
         
         .header {
             text-align: center;
