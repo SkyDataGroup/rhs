@@ -4,41 +4,182 @@
   <meta charset="UTF-8">
   <title>План зустрічей • 2026</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f7f7f7;
-      margin: 0;
-      padding: 20px;
-      line-height: 1.6;
-    }
-    h1 {
-      text-align: center;
-    }
-    .month {
-      background: #fff;
-      border-radius: 8px;
-      padding: 16px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    }
-    .month h2 {
-      margin-top: 0;
-      color: #2c3e50;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    li {
-      margin-bottom: 6px;
-    }
-    footer {
-      text-align: center;
-      font-size: 14px;
-      color: #777;
-      margin-top: 40px;
-    }
-  </style>
+      <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+    background: #1a1a1a !important;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #1a1a1a !important;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: env(safe-area-inset-bottom, 100px);
+    margin: 0;
+    padding-left: env(safe-area-inset-left, 0);
+    padding-right: env(safe-area-inset-right, 0);
+    overflow-x: hidden;
+}
+        
+       .container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 15px;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('Goshivs.jpeg');
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    margin-top: 10px;
+    margin-bottom: 120px;
+    position: relative;
+}
+        
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: linear-gradient(45deg, #4a90e2, #357abd);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        
+        .header h1 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .header .subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+            font-style: italic;
+        }
+        
+        .date-section {
+            margin-bottom: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 15px;
+            border-left: 4px solid #FFD700;
+        }
+        
+        .date-header {
+            font-size: 16px;
+            font-weight: bold;
+            color: #FFD700;
+            margin-bottom: 10px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .schedule-item {
+            display: flex;
+            margin-bottom: 8px;
+            padding: 8px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 6px;
+            border-left: 2px solid rgba(255,215,0,0.6);
+        }
+        
+        .time {
+            font-weight: bold;
+            color: #FFD700;
+            min-width: 50px;
+            font-size: 12px;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+        
+        .activity {
+            font-size: 12px;
+            line-height: 1.4;
+            flex-grow: 1;
+        }
+        
+        .special-note {
+            font-style: italic;
+            color: #98fb98;
+            font-size: 11px;
+            margin-top: 3px;
+        }
+        
+        .highlight {
+            background: rgba(255,215,0,0.2);
+            border-left-color: #FFD700;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 0;
+            font-size: 12px;
+        }
+        
+        .facebook-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: #1877f2;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+            border: none;
+            box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3);
+        }
+        
+        .facebook-button:hover {
+            background: #166fe5;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(24, 119, 242, 0.4);
+        }
+        
+        .facebook-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 10px rgba(24, 119, 242, 0.3);
+        }
+        
+        .cross {
+            font-size: 20px;
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 380px) {
+            .container {
+                padding: 10px;
+                margin: 5px;
+            }
+            
+            .header h1 {
+                font-size: 18px;
+            }
+            
+            .time {
+                min-width: 45px;
+                font-size: 11px;
+            }
+            
+            .activity {
+                font-size: 11px;
+            }
+        }
+    </style>
 </head>
 <body>
 
