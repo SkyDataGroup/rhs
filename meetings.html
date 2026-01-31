@@ -10,12 +10,8 @@
 <style>
 * { box-sizing: border-box; }
 
-html, body {
-  margin: 0;
-  padding: 0;
-}
-
 body {
+  margin: 0;
   font-family: 'Inter', sans-serif;
   background:
     linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)),
@@ -23,19 +19,16 @@ body {
   color: #1f2937;
 }
 
-/* HEADER — НЕ ХОВАЄТЬСЯ */
+/* HEADER */
 .header {
   position: sticky;
   top: 0;
-  z-index: 10;
-  padding: 32px 16px 24px;
+  z-index: 20;
+  padding: 28px 16px 22px;
   text-align: center;
   color: #fff;
-  background: linear-gradient(
-    rgba(0,0,0,0.35),
-    rgba(0,0,0,0.15),
-    rgba(0,0,0,0)
-  );
+  background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45));
 }
 
 .header h1 {
@@ -47,6 +40,11 @@ body {
   margin: 0;
   font-size: 16px;
   opacity: 0.95;
+}
+
+/* SPACER — КЛЮЧОВИЙ ЕЛЕМЕНТ */
+.header-spacer {
+  height: 20px;
 }
 
 /* CONTENT */
@@ -146,7 +144,7 @@ footer {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s;
-  z-index: 20;
+  z-index: 30;
 }
 
 .top.show {
@@ -168,6 +166,8 @@ footer {
   <h1>Рух Християнських Сімей</h1>
   <p>План зустрічей на перше півріччя 2026 року</p>
 </div>
+
+<div class="header-spacer"></div>
 
 <div class="wrapper">
 <div class="card">
@@ -251,8 +251,7 @@ const topBtn = document.getElementById('top');
 window.addEventListener('scroll', () => {
   topBtn.classList.toggle('show', window.scrollY > 300);
 });
-topBtn.onclick = () =>
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+topBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
 const today = new Date().toISOString().split('T')[0];
 document.querySelectorAll('.event[data-date]').forEach(e => {
