@@ -3,19 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>План зустрічей • РХС</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --primary: #2c3e50;
-      --accent: #6b7fa6;
-      --card-bg: rgba(255,255,255,0.94);
-      --highlight: #fff3c4;
-      --muted: #6b7280;
-    }
-
     * {
       box-sizing: border-box;
       -webkit-tap-highlight-color: transparent;
@@ -24,204 +16,214 @@
     html, body {
       height: 100%;
       margin: 0;
-      overscroll-behavior: none; /* 🚫 прибирає білий фон */
     }
 
     body {
       font-family: 'Inter', sans-serif;
       background:
         linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)),
-        url('background.png') center / cover no-repeat fixed;
+        url('background.png') center / cover no-repeat;
       color: #1f2937;
-      overflow: hidden; /* тіло НЕ скролиться */
+      overflow: hidden; /* body НЕ скролиться */
     }
 
-    /* PROGRESS BAR */
-    .progress {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 4px;
-      width: 0%;
-      background: #facc15;
-      z-index: 100;
-    }
-
-    /* HERO */
-    .hero {
-      position: sticky;
-      top: 0;
-      z-index: 10;
+    /* HEADER */
+    .header {
+      padding: 24px 16px 20px;
       text-align: center;
       color: #fff;
-      padding: 26px 16px 22px;
-      backdrop-filter: blur(2px);
     }
 
-    .hero h1 {
-      font-size: 34px;
+    .header h1 {
       margin: 0 0 6px;
+      font-size: 28px;
     }
 
-    .hero p {
-      font-size: 18px;
+    .header p {
       margin: 0;
+      font-size: 16px;
       opacity: 0.95;
     }
 
-    /* SCROLLABLE LIST */
-    .scroll-area {
-      height: calc(100vh - 120px);
+    /* SCROLL AREA */
+    .scroll {
+      height: calc(100vh - 96px);
       overflow-y: auto;
-      -webkit-overflow-scrolling: touch; /* iOS bounce */
-      padding: 0 16px 60px;
+      -webkit-overflow-scrolling: touch;
+      padding: 0 16px 80px;
     }
 
-    .content {
-      max-width: 1000px;
+    .card {
+      max-width: 900px;
       margin: 0 auto;
-      background: var(--card-bg);
-      border-radius: 22px;
-      padding: 30px 24px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      background: rgba(255,255,255,0.95);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 16px 32px rgba(0,0,0,0.25);
     }
 
     .month {
-      margin-bottom: 46px;
+      margin-bottom: 40px;
     }
 
-    .month-title {
-      font-size: 22px;
-      font-weight: 700;
-      margin-bottom: 18px;
+    .month h2 {
+      margin: 0 0 16px;
+      font-size: 20px;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
 
-    .month-title::before {
-      content: "";
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--accent);
+    .month h2::before {
+      content: "•";
+      color: #6b7fa6;
+      font-size: 26px;
     }
 
     .event {
       display: flex;
-      gap: 16px;
+      gap: 14px;
       background: #fff;
       border-radius: 14px;
-      padding: 16px;
-      margin-bottom: 14px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      padding: 14px;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     .event.next {
-      background: var(--highlight);
-      border-left: 6px solid #e0b100;
+      background: #fff4c2;
+      border-left: 5px solid #e0b100;
     }
 
-    .event-date {
-      min-width: 82px;
+    .date {
+      min-width: 72px;
       text-align: center;
       background: #eef2f7;
       border-radius: 10px;
-      padding: 10px 6px;
+      padding: 8px 4px;
       font-weight: 700;
-      color: var(--primary);
     }
 
-    .event-title {
+    .title {
       font-weight: 600;
       margin-bottom: 4px;
     }
 
-    .event-note {
+    .note {
       font-size: 14px;
-      color: var(--muted);
+      color: #6b7280;
     }
 
     footer {
       text-align: center;
-      margin-top: 40px;
-      font-size: 15px;
-      color: var(--muted);
+      margin-top: 32px;
+      font-size: 14px;
+      color: #6b7280;
     }
 
-    .facebook-button {
+    .facebook {
       display: inline-block;
-      margin-top: 24px;
-      padding: 14px 28px;
+      margin-top: 20px;
+      padding: 12px 24px;
       background: #1877f2;
       color: #fff;
-      border-radius: 30px;
       text-decoration: none;
+      border-radius: 30px;
       font-weight: 600;
     }
 
     /* BACK TO TOP */
-    .to-top {
+    .top {
       position: fixed;
-      right: 18px;
-      bottom: 22px;
-      width: 46px;
-      height: 46px;
+      right: 16px;
+      bottom: 20px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
       background: #1f2937;
       color: #fff;
-      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 20px;
-      cursor: pointer;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.25s ease;
-      z-index: 50;
+      transition: opacity 0.25s;
     }
 
-    .to-top.show {
+    .top.show {
       opacity: 1;
       pointer-events: auto;
     }
 
     @media (max-width: 600px) {
-      .hero h1 { font-size: 26px; }
-      .hero p { font-size: 16px; }
-      .scroll-area { height: calc(100vh - 105px); }
       .event { flex-direction: column; }
-      .event-date { align-self: flex-start; }
+      .date { align-self: flex-start; }
     }
   </style>
 </head>
 
 <body>
 
-<div class="progress" id="progress"></div>
-
-<div class="hero">
+<div class="header">
   <h1>Рух Християнських Сімей</h1>
   <p>План зустрічей на перше півріччя 2026 року</p>
 </div>
 
-<div class="scroll-area" id="scrollArea">
-  <div class="content">
+<div class="scroll" id="scroll">
+  <div class="card">
 
     <!-- СІЧЕНЬ -->
     <div class="month">
-      <div class="month-title">Січень</div>
-      <div class="event" data-date="2026-01-04"><div class="event-date">04.01</div><div class="event-title">Вертеп та коляда у Львові</div></div>
-      <div class="event" data-date="2026-01-18"><div class="event-date">18.01</div><div class="event-title">Вертеп та розколяда в спільноті</div></div>
-      <div class="event" data-date="2026-01-25"><div class="event-date">25.01</div><div class="event-title">Участь у парафіяльній розколяді</div></div>
+      <h2>Січень</h2>
+
+      <div class="event" data-date="2026-01-04">
+        <div class="date">04.01</div>
+        <div class="title">Вертеп та коляда у Львові</div>
+      </div>
+
+      <div class="event" data-date="2026-01-18">
+        <div class="date">18.01</div>
+        <div class="title">Вертеп та розколяда в спільноті</div>
+      </div>
+
+      <div class="event" data-date="2026-01-25">
+        <div class="date">25.01</div>
+        <div class="title">Участь у парафіяльній розколяді</div>
+      </div>
     </div>
 
-    <!-- (далі увесь план — без змін, як у тебе зараз) -->
+    <!-- ЛЮТИЙ -->
+    <div class="month">
+      <h2>Лютий</h2>
+
+      <div class="event" data-date="2026-02-01">
+        <div class="date">01.02</div>
+        <div>
+          <div class="title">Вертеп та зустріч зі спільнотою ц. Св. Йосафата</div>
+          <div class="note">Тема: «Весілля в Кані Галилейській». Мар’ян та Ольга Гавалко</div>
+        </div>
+      </div>
+
+      <div class="event" data-date="2026-02-15">
+        <div class="date">15.02</div>
+        <div>
+          <div class="title">Курс «Сім’я — домашня Церква», 1-ша тема</div>
+          <div class="note">о. Йоан Школик</div>
+        </div>
+      </div>
+
+      <div class="event" data-date="2026-02-20">
+        <div class="date">20.02</div>
+        <div class="title">Адорація</div>
+      </div>
+    </div>
+
+    <!-- (інші місяці додаються так само, структура стабільна) -->
 
     <footer>
       <div>Щочетверга о 18:30 — <b>Lectio Divina</b></div>
-      <a class="facebook-button" target="_blank"
-         href="https://www.facebook.com/groups/258049066659625">
+      <a class="facebook" href="https://www.facebook.com/groups/258049066659625" target="_blank">
         Приєднуйтеся до нас у Facebook
       </a>
     </footer>
@@ -229,29 +231,24 @@
   </div>
 </div>
 
-<div class="to-top" id="toTop">↑</div>
+<div class="top" id="top">↑</div>
 
 <script>
-  const scrollArea = document.getElementById('scrollArea');
-  const progress = document.getElementById('progress');
-  const toTop = document.getElementById('toTop');
+  const scroll = document.getElementById('scroll');
+  const topBtn = document.getElementById('top');
 
-  scrollArea.addEventListener('scroll', () => {
-    const max = scrollArea.scrollHeight - scrollArea.clientHeight;
-    progress.style.width = (scrollArea.scrollTop / max * 100) + '%';
-    toTop.classList.toggle('show', scrollArea.scrollTop > 300);
+  scroll.addEventListener('scroll', () => {
+    topBtn.classList.toggle('show', scroll.scrollTop > 300);
   });
 
-  toTop.onclick = () =>
-    scrollArea.scrollTo({ top: 0, behavior: 'smooth' });
+  topBtn.onclick = () => scroll.scrollTo({ top: 0, behavior: 'smooth' });
 
   const today = new Date().toISOString().split('T')[0];
   const events = document.querySelectorAll('.event[data-date]');
   for (const e of events) {
     if (e.dataset.date >= today) {
       e.classList.add('next');
-      setTimeout(() =>
-        e.scrollIntoView({ behavior: 'smooth', block: 'center' }), 500);
+      setTimeout(() => e.scrollIntoView({ behavior: 'smooth', block: 'center' }), 400);
       break;
     }
   }
