@@ -1,183 +1,248 @@
-<h1>План зустрічей на перше півріччя 2026 року</h1>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Календар зустрічей • 2026</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- СІЧЕНЬ -->
-<div class="month">
-  <div class="month-title">Січень</div>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <div class="event">
-    <div class="event-date">04.01</div>
-    <div class="event-title">Вертеп та коляда у Львові</div>
-  </div>
+  <style>
+    :root {
+      --primary: #2c3e50;
+      --accent: #8e44ad;
+      --bg: #f4f6f8;
+      --card: #ffffff;
+      --muted: #6b7280;
+    }
 
-  <div class="event">
-    <div class="event-date">18.01</div>
-    <div class="event-title">Вертеп та розколяда в спільноті</div>
-  </div>
+    * {
+      box-sizing: border-box;
+    }
 
-  <div class="event">
-    <div class="event-date">25.01</div>
-    <div class="event-title">Участь у парафіяльній розколяді</div>
-  </div>
-</div>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: #1f2937;
+    }
 
-<!-- ЛЮТИЙ -->
-<div class="month">
-  <div class="month-title">Лютий</div>
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
 
-  <div class="event">
-    <div class="event-date">01.02</div>
-    <div class="event-title">
-      Вертеп та зустріч зі спільнотою церкви Св. Йосафата
+    h1 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 40px;
+      color: var(--primary);
+    }
+
+    .month {
+      margin-bottom: 48px;
+    }
+
+    .month-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .month-title::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .event {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin-bottom: 14px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      display: flex;
+      gap: 16px;
+      transition: transform 0.2s ease;
+    }
+
+    .event:hover {
+      transform: translateY(-2px);
+    }
+
+    .event-date {
+      min-width: 70px;
+      background: #f1e9f7;
+      color: var(--accent);
+      border-radius: 10px;
+      font-weight: 700;
+      text-align: center;
+      padding: 8px 6px;
+      line-height: 1.2;
+    }
+
+    .event-content {
+      flex: 1;
+    }
+
+    .event-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .event-note {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    footer strong {
+      color: var(--primary);
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 26px;
+      }
+
+      .event {
+        flex-direction: column;
+      }
+
+      .event-date {
+        align-self: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>План зустрічей на перше півріччя 2026 року</h1>
+
+  <!-- СІЧЕНЬ -->
+  <div class="month">
+    <div class="month-title">Січень</div>
+
+    <div class="event">
+      <div class="event-date">04.01</div>
+      <div class="event-content">
+        <div class="event-title">Вертеп та коляда у Львові</div>
+      </div>
     </div>
-    <div class="event-note">
-      Тема: «Весілля в Кані Галилейській»<br>
-      Спікери: Мар’ян та Ольга Гавалко
+
+    <div class="event">
+      <div class="event-date">18.01</div>
+      <div class="event-content">
+        <div class="event-title">Вертеп та розколяда в спільноті</div>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="event-date">25.01</div>
+      <div class="event-content">
+        <div class="event-title">Участь у парафіяльній розколяді</div>
+      </div>
     </div>
   </div>
 
-  <div class="event">
-    <div class="event-date">15.02</div>
-    <div class="event-title">
-      Курс «Сім’я — домашня Церква», 1-ша тема
+  <!-- ЛЮТИЙ -->
+  <div class="month">
+    <div class="month-title">Лютий</div>
+
+    <div class="event">
+      <div class="event-date">01.02</div>
+      <div class="event-content">
+        <div class="event-title">
+          Вертеп та зустріч зі спільнотою церкви Св. Йосафата
+        </div>
+        <div class="event-note">
+          Тема: «Весілля в Кані Галилейській»<br>
+          Спікери: Мар’ян та Ольга Гавалко
+        </div>
+      </div>
     </div>
-    <div class="event-note">о. Йоан Школик</div>
-  </div>
 
-  <div class="event">
-    <div class="event-date">20.02</div>
-    <div class="event-title">Адорація</div>
-  </div>
-</div>
-
-<!-- БЕРЕЗЕНЬ -->
-<div class="month">
-  <div class="month-title">Березень</div>
-
-  <div class="event">
-    <div class="event-date">28.02 – 01.03</div>
-    <div class="event-title">Реколекції для сімей</div>
-  </div>
-
-  <div class="event">
-    <div class="event-date">13–15.03</div>
-    <div class="event-title">Реколекції (Львів)</div>
-  </div>
-
-  <div class="event">
-    <div class="event-date">15.03</div>
-    <div class="event-title">Перегляд фільму</div>
-  </div>
-
-  <div class="event">
-    <div class="event-date">22.03</div>
-    <div class="event-title">Хресна Дорога</div>
-    <div class="event-note">Страдч</div>
-  </div>
-
-  <div class="event">
-    <div class="event-date">27.03</div>
-    <div class="event-title">Хресна Дорога на парафії</div>
-  </div>
-
-  <div class="event">
-    <div class="event-date">29.03</div>
-    <div class="event-title">Зустріч сімей з Патріархом</div>
-    <div class="event-note">м. Київ</div>
-  </div>
-</div>
-
-<!-- КВІТЕНЬ -->
-<div class="month">
-  <div class="month-title">Квітень</div>
-
-  <div class="event">
-    <div class="event-date">05.04</div>
-    <div class="event-title">Зустріч спільноти</div>
-  </div>
-</div>
-
-<!-- ТРАВЕНЬ -->
-<div class="month">
-  <div class="month-title">Травень</div>
-
-  <div class="event">
-    <div class="event-date">03.05</div>
-    <div class="event-title">
-      Презентація РХС + тема «Весілля в Кані Галилейській»
+    <div class="event">
+      <div class="event-date">15.02</div>
+      <div class="event-content">
+        <div class="event-title">
+          Курс «Сім’я — домашня Церква», 1-ша тема
+        </div>
+        <div class="event-note">о. Йоан Школик</div>
+      </div>
     </div>
-    <div class="event-note">На парафії</div>
-  </div>
 
-  <div class="event">
-    <div class="event-date">17.05</div>
-    <div class="event-title">День сім’ї</div>
-    <div class="event-note">Львів</div>
-  </div>
-
-  <div class="event">
-    <div class="event-date">22.05</div>
-    <div class="event-title">Адорація</div>
-  </div>
-
-  <div class="event">
-    <div class="event-date">24.05</div>
-    <div class="event-title">День сім’ї</div>
-    <div class="event-note">На парафії</div>
-  </div>
-</div>
-
-<!-- ЧЕРВЕНЬ -->
-<div class="month">
-  <div class="month-title">Червень</div>
-
-  <div class="event">
-    <div class="event-date">07.06</div>
-    <div class="event-title">
-      Курс «Сім’я — домашня Церква», 2-га тема
-    </div>
-    <div class="event-note">о. Йоан Школик</div>
-  </div>
-
-  <div class="event">
-    <div class="event-date">21.06</div>
-    <div class="event-title">
-      Виїзд на природу (День батька)
+    <div class="event">
+      <div class="event-date">20.02</div>
+      <div class="event-content">
+        <div class="event-title">Адорація</div>
+      </div>
     </div>
   </div>
 
-  <div class="event">
-    <div class="event-date">Дата уточнюється</div>
-    <div class="event-title">Форум сімей</div>
-  </div>
-</div>
+  <!-- БЕРЕЗЕНЬ -->
+  <div class="month">
+    <div class="month-title">Березень</div>
 
-<!-- ЛИПЕНЬ -->
-<div class="month">
-  <div class="month-title">Липень</div>
-
-  <div class="event">
-    <div class="event-date">Липень</div>
-    <div class="event-title">Табір для сімей</div>
-  </div>
-</div>
-
-<!-- СЕРПЕНЬ -->
-<div class="month">
-  <div class="month-title">Серпень</div>
-
-  <div class="event">
-    <div class="event-date">16.08</div>
-    <div class="event-title">
-      Піша проща сімей та Хресна Дорога
+    <div class="event">
+      <div class="event-date">28.02–01.03</div>
+      <div class="event-content">
+        <div class="event-title">Реколекції для сімей</div>
+      </div>
     </div>
-    <div class="event-note">с. Бендюга</div>
+
+    <div class="event">
+      <div class="event-date">13–15.03</div>
+      <div class="event-content">
+        <div class="event-title">Реколекції (Львів)</div>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="event-date">15.03</div>
+      <div class="event-content">
+        <div class="event-title">Перегляд фільму</div>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="event-date">22.03</div>
+      <div class="event-content">
+        <div class="event-title">Хресна Дорога</div>
+        <div class="event-note">Страдч</div>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="event-date">29.03</div>
+      <div class="event-content">
+        <div class="event-title">Зустріч сімей з Патріархом</div>
+        <div class="event-note">м. Київ</div>
+      </div>
+    </div>
   </div>
+
+  <footer>
+    Щочетверга о 18:30 — читання Святого Письма у форматі <strong>Lectio Divina</strong>
+  </footer>
+
 </div>
 
-<footer>
-  Щочетверга о 18:30 — читання Святого Письма у форматі <b>Lectio Divina</b>
-  <a href="https://www.facebook.com/groups/258049066659625" target="_blank" class="facebook-button">
-                Приєднуйтеся до нас у Facebook
-            </a>
-</footer>
-
+</body>
+</html>
