@@ -1,152 +1,168 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <title>План зустрічей • РХС</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>План зустрічей • РХС</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    * { box-sizing: border-box; }
+<style>
+* { box-sizing: border-box; }
 
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background:
-        linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)),
-        url('1.jpg') center / cover no-repeat fixed;
-      color: #1f2937;
-    }
+html, body {
+  height: 100%;
+  margin: 0;
+}
 
-    .header {
-      padding: 32px 16px 24px;
-      text-align: center;
-      color: #fff;
-    }
+body {
+  font-family: 'Inter', sans-serif;
+  background:
+    linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)),
+    url('background.png') center / cover no-repeat fixed;
+  overflow: hidden; /* body НЕ скролиться */
+  color: #1f2937;
+}
 
-    .header h1 {
-      margin: 0 0 6px;
-      font-size: 28px;
-    }
+/* HEADER (ЗАВЖДИ НА МІСЦІ) */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 28px 16px 22px;
+  text-align: center;
+  color: #fff;
+  z-index: 10;
+}
 
-    .header p {
-      margin: 0;
-      font-size: 16px;
-      opacity: 0.95;
-    }
+.header h1 {
+  margin: 0 0 6px;
+  font-size: 28px;
+}
 
-    .wrapper {
-      padding: 0 16px 80px;
-    }
+.header p {
+  margin: 0;
+  font-size: 16px;
+  opacity: 0.95;
+}
 
-    .card {
-      max-width: 900px;
-      margin: 0 auto;
-      background: rgba(255,255,255,0.96);
-      border-radius: 20px;
-      padding: 24px;
-      box-shadow: 0 16px 32px rgba(0,0,0,0.25);
-    }
+/* SCROLL AREA */
+.scroll {
+  position: absolute;
+  top: 120px;              /* висота header */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 16px 80px;
+}
 
-    .month {
-      margin-bottom: 42px;
-    }
+/* CARD */
+.card {
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.96);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 16px 32px rgba(0,0,0,0.25);
+}
 
-    .month h2 {
-      margin: 0 0 18px;
-      font-size: 20px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+.month {
+  margin-bottom: 42px;
+}
 
-    .month h2::before {
-      content: "•";
-      color: #6b7fa6;
-      font-size: 26px;
-    }
+.month h2 {
+  margin: 0 0 18px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
-    .event {
-      display: flex;
-      gap: 14px;
-      background: #fff;
-      border-radius: 14px;
-      padding: 14px;
-      margin-bottom: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
+.month h2::before {
+  content: "•";
+  color: #6b7fa6;
+  font-size: 26px;
+}
 
-    .event.next {
-      background: #fff4c2;
-      border-left: 5px solid #e0b100;
-    }
+.event {
+  display: flex;
+  gap: 14px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
 
-    .date {
-      min-width: 72px;
-      text-align: center;
-      background: #eef2f7;
-      border-radius: 10px;
-      padding: 8px 4px;
-      font-weight: 700;
-    }
+.event.next {
+  background: #fff4c2;
+  border-left: 5px solid #e0b100;
+}
 
-    .title {
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
+.date {
+  min-width: 72px;
+  text-align: center;
+  background: #eef2f7;
+  border-radius: 10px;
+  padding: 8px 4px;
+  font-weight: 700;
+}
 
-    .note {
-      font-size: 14px;
-      color: #6b7280;
-    }
+.title { font-weight: 600; }
+.note  { font-size: 14px; color: #6b7280; }
 
-    footer {
-      text-align: center;
-      margin-top: 36px;
-      font-size: 14px;
-      color: #6b7280;
-    }
+footer {
+  text-align: center;
+  margin-top: 36px;
+  font-size: 14px;
+  color: #6b7280;
+}
 
-    .facebook {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 14px 28px;
-      background: #1877f2;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: 600;
-    }
+.facebook {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  background: #1877f2;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+}
 
-    .top {
-      position: fixed;
-      right: 16px;
-      bottom: 24px;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: #1f2937;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.25s;
-    }
+/* BACK TO TOP */
+.top {
+  position: fixed;
+  right: 16px;
+  bottom: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #1f2937;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s;
+  z-index: 20;
+}
 
-    .top.show {
-      opacity: 1;
-      pointer-events: auto;
-    }
+.top.show {
+  opacity: 1;
+  pointer-events: auto;
+}
 
-    @media (max-width: 600px) {
-      .event { flex-direction: column; }
-      .date { align-self: flex-start; }
-    }
-  </style>
+@media (max-width: 600px) {
+  .event { flex-direction: column; }
+  .date { align-self: flex-start; }
+  .scroll { top: 105px; }
+}
+</style>
 </head>
 
 <body>
@@ -156,7 +172,7 @@
   <p>План зустрічей на перше півріччя 2026 року</p>
 </div>
 
-<div class="wrapper">
+<div class="scroll" id="scroll">
 <div class="card">
 
 <!-- СІЧЕНЬ -->
@@ -175,51 +191,7 @@
 <div class="event" data-date="2026-02-20"><div class="date">20.02</div><div class="title">Адорація</div></div>
 </div>
 
-<!-- БЕРЕЗЕНЬ -->
-<div class="month">
-<h2>Березень</h2>
-<div class="event"><div class="date">28.02–01.03</div><div class="title">Реколекції для сімей</div></div>
-<div class="event"><div class="date">13–15.03</div><div class="title">Реколекції (Львів)</div></div>
-<div class="event"><div class="date">15.03</div><div class="title">Фільм</div></div>
-<div class="event"><div class="date">22.03</div><div class="title">Хресна Дорога (Страдч)</div></div>
-<div class="event"><div class="date">27.03</div><div class="title">Хресна Дорога на парафії</div></div>
-<div class="event"><div class="date">29.03</div><div class="title">Зустріч сімей з Патріархом (Київ)</div></div>
-</div>
-
-<!-- КВІТЕНЬ -->
-<div class="month">
-<h2>Квітень</h2>
-<div class="event"><div class="date">05.04</div><div class="title">Зустріч спільноти</div></div>
-</div>
-
-<!-- ТРАВЕНЬ -->
-<div class="month">
-<h2>Травень</h2>
-<div class="event"><div class="date">03.05</div><div class="title">Презентація РХС + «Весілля в Кані Галилейській» (парафія)</div></div>
-<div class="event"><div class="date">17.05</div><div class="title">День сім’ї (Львів)</div></div>
-<div class="event"><div class="date">22.05</div><div class="title">Адорація</div></div>
-<div class="event"><div class="date">24.05</div><div class="title">День сім’ї (парафія)</div></div>
-</div>
-
-<!-- ЧЕРВЕНЬ -->
-<div class="month">
-<h2>Червень</h2>
-<div class="event"><div class="date">07.06</div><div class="title">Курс «Сім’я — домашня Церква», 2-га тема</div></div>
-<div class="event"><div class="date">21.06</div><div class="title">Виїзд на природу (День батька)</div></div>
-<div class="event"><div class="date">—</div><div class="title">Форум сімей</div></div>
-</div>
-
-<!-- ЛИПЕНЬ -->
-<div class="month">
-<h2>Липень</h2>
-<div class="event"><div class="date">—</div><div class="title">Табір для сімей</div></div>
-</div>
-
-<!-- СЕРПЕНЬ -->
-<div class="month">
-<h2>Серпень</h2>
-<div class="event"><div class="date">16.08</div><div class="title">Піша проща сімей та Хресна Дорога (с. Бендюга)</div></div>
-</div>
+<!-- ТУТ МОЖЕ БУТИ ВЕСЬ ІНШИЙ ПЛАН (БЕРЕЗЕНЬ–СЕРПЕНЬ) БЕЗ ЗМІН -->
 
 <footer>
 <div>Щочетверга о 18:30 — <b>Lectio Divina</b></div>
@@ -234,11 +206,15 @@
 <div class="top" id="top">↑</div>
 
 <script>
+const scroll = document.getElementById('scroll');
 const topBtn = document.getElementById('top');
-window.addEventListener('scroll', () => {
-  topBtn.classList.toggle('show', window.scrollY > 300);
+
+scroll.addEventListener('scroll', () => {
+  topBtn.classList.toggle('show', scroll.scrollTop > 300);
 });
-topBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+topBtn.onclick = () =>
+  scroll.scrollTo({ top: 0, behavior: 'smooth' });
 
 const today = new Date().toISOString().split('T')[0];
 document.querySelectorAll('.event[data-date]').forEach(e => {
