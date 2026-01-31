@@ -11,8 +11,8 @@
 * { box-sizing: border-box; }
 
 html, body {
-  height: 100%;
   margin: 0;
+  padding: 0;
 }
 
 body {
@@ -20,24 +20,26 @@ body {
   background:
     linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)),
     url('background.png') center / cover no-repeat fixed;
-  overflow: hidden; /* body НЕ скролиться */
   color: #1f2937;
 }
 
-/* HEADER (ЗАВЖДИ НА МІСЦІ) */
+/* HEADER — НЕ ХОВАЄТЬСЯ */
 .header {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
-  padding: 28px 16px 22px;
+  z-index: 10;
+  padding: 32px 16px 24px;
   text-align: center;
   color: #fff;
-  z-index: 10;
+  background: linear-gradient(
+    rgba(0,0,0,0.35),
+    rgba(0,0,0,0.15),
+    rgba(0,0,0,0)
+  );
 }
 
 .header h1 {
-  margin: 0 0 6px;
+  margin: 0 0 8px;
   font-size: 28px;
 }
 
@@ -47,19 +49,11 @@ body {
   opacity: 0.95;
 }
 
-/* SCROLL AREA */
-.scroll {
-  position: absolute;
-  top: 120px;              /* висота header */
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  padding: 0 16px 80px;
+/* CONTENT */
+.wrapper {
+  padding: 0 16px 100px;
 }
 
-/* CARD */
 .card {
   max-width: 900px;
   margin: 0 auto;
@@ -69,6 +63,7 @@ body {
   box-shadow: 0 16px 32px rgba(0,0,0,0.25);
 }
 
+/* MONTH */
 .month {
   margin-bottom: 42px;
 }
@@ -87,6 +82,7 @@ body {
   font-size: 26px;
 }
 
+/* EVENT */
 .event {
   display: flex;
   gap: 14px;
@@ -103,7 +99,7 @@ body {
 }
 
 .date {
-  min-width: 72px;
+  min-width: 78px;
   text-align: center;
   background: #eef2f7;
   border-radius: 10px;
@@ -114,6 +110,7 @@ body {
 .title { font-weight: 600; }
 .note  { font-size: 14px; color: #6b7280; }
 
+/* FOOTER */
 footer {
   text-align: center;
   margin-top: 36px;
@@ -148,7 +145,7 @@ footer {
   font-size: 20px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity .25s;
+  transition: opacity 0.25s;
   z-index: 20;
 }
 
@@ -157,10 +154,10 @@ footer {
   pointer-events: auto;
 }
 
+/* MOBILE */
 @media (max-width: 600px) {
   .event { flex-direction: column; }
   .date { align-self: flex-start; }
-  .scroll { top: 105px; }
 }
 </style>
 </head>
@@ -172,7 +169,7 @@ footer {
   <p>План зустрічей на перше півріччя 2026 року</p>
 </div>
 
-<div class="scroll" id="scroll">
+<div class="wrapper">
 <div class="card">
 
 <!-- СІЧЕНЬ -->
@@ -191,7 +188,51 @@ footer {
 <div class="event" data-date="2026-02-20"><div class="date">20.02</div><div class="title">Адорація</div></div>
 </div>
 
-<!-- ТУТ МОЖЕ БУТИ ВЕСЬ ІНШИЙ ПЛАН (БЕРЕЗЕНЬ–СЕРПЕНЬ) БЕЗ ЗМІН -->
+<!-- БЕРЕЗЕНЬ -->
+<div class="month">
+<h2>Березень</h2>
+<div class="event"><div class="date">28.02–01.03</div><div class="title">Реколекції для сімей</div></div>
+<div class="event"><div class="date">13–15.03</div><div class="title">Реколекції (Львів)</div></div>
+<div class="event"><div class="date">15.03</div><div class="title">Фільм</div></div>
+<div class="event"><div class="date">22.03</div><div class="title">Хресна Дорога (Страдч)</div></div>
+<div class="event"><div class="date">27.03</div><div class="title">Хресна Дорога на парафії</div></div>
+<div class="event"><div class="date">29.03</div><div class="title">Зустріч сімей з Патріархом (Київ)</div></div>
+</div>
+
+<!-- КВІТЕНЬ -->
+<div class="month">
+<h2>Квітень</h2>
+<div class="event"><div class="date">05.04</div><div class="title">Зустріч спільноти</div></div>
+</div>
+
+<!-- ТРАВЕНЬ -->
+<div class="month">
+<h2>Травень</h2>
+<div class="event"><div class="date">03.05</div><div class="title">Презентація РХС + «Весілля в Кані Галилейській» (парафія)</div></div>
+<div class="event"><div class="date">17.05</div><div class="title">День сім’ї (Львів)</div></div>
+<div class="event"><div class="date">22.05</div><div class="title">Адорація</div></div>
+<div class="event"><div class="date">24.05</div><div class="title">День сім’ї (парафія)</div></div>
+</div>
+
+<!-- ЧЕРВЕНЬ -->
+<div class="month">
+<h2>Червень</h2>
+<div class="event"><div class="date">07.06</div><div class="title">Курс «Сім’я — домашня Церква», 2-га тема</div></div>
+<div class="event"><div class="date">21.06</div><div class="title">Виїзд на природу (День батька)</div></div>
+<div class="event"><div class="date">—</div><div class="title">Форум сімей</div></div>
+</div>
+
+<!-- ЛИПЕНЬ -->
+<div class="month">
+<h2>Липень</h2>
+<div class="event"><div class="date">—</div><div class="title">Табір для сімей</div></div>
+</div>
+
+<!-- СЕРПЕНЬ -->
+<div class="month">
+<h2>Серпень</h2>
+<div class="event"><div class="date">16.08</div><div class="title">Піша проща сімей та Хресна Дорога (с. Бендюга)</div></div>
+</div>
 
 <footer>
 <div>Щочетверга о 18:30 — <b>Lectio Divina</b></div>
@@ -206,15 +247,12 @@ footer {
 <div class="top" id="top">↑</div>
 
 <script>
-const scroll = document.getElementById('scroll');
 const topBtn = document.getElementById('top');
-
-scroll.addEventListener('scroll', () => {
-  topBtn.classList.toggle('show', scroll.scrollTop > 300);
+window.addEventListener('scroll', () => {
+  topBtn.classList.toggle('show', window.scrollY > 300);
 });
-
 topBtn.onclick = () =>
-  scroll.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 
 const today = new Date().toISOString().split('T')[0];
 document.querySelectorAll('.event[data-date]').forEach(e => {
