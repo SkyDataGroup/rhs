@@ -2,20 +2,18 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <title>Календар зустрічей • 2026</title>
+  <title>План зустрічей • РХС Шептицький</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --primary: #2c3e50;
       --accent: #6b7fa6;
-      --highlight: #fff6d6;
-      --bg: #f4f6f8;
-      --card: #ffffff;
-      --muted: #6b7280;
+      --card-bg: rgba(255,255,255,0.92);
+      --highlight: #fff3c4;
+      --text-muted: #6b7280;
     }
 
     * { box-sizing: border-box; }
@@ -23,36 +21,51 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: var(--bg);
       color: #1f2937;
+      background:
+        linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
+        url('background.jpg') center / cover no-repeat fixed;
     }
 
-    .container {
-      max-width: 900px;
+    .page {
+      max-width: 1000px;
       margin: 0 auto;
-      padding: 32px 20px 60px;
+      padding: 24px 16px 80px;
     }
 
-    /* LOGO */
-    .logo {
+    /* HEADER */
+    .hero {
       text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .logo img {
-      max-width: 220px;
-      height: auto;
-    }
-
-    h1 {
-      text-align: center;
-      font-size: 30px;
       margin-bottom: 40px;
-      color: var(--primary);
+      color: #fff;
+    }
+
+    .hero img {
+      max-width: 260px;
+      width: 80%;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: 34px;
+      margin: 10px 0;
+    }
+
+    .hero p {
+      font-size: 18px;
+      opacity: 0.95;
+    }
+
+    /* CONTENT */
+    .content {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 28px 22px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
     }
 
     .month {
-      margin-bottom: 48px;
+      margin-bottom: 42px;
     }
 
     .month-title {
@@ -68,26 +81,20 @@
       content: "";
       width: 10px;
       height: 10px;
-      border-radius: 50%;
       background: var(--accent);
+      border-radius: 50%;
     }
 
     .event {
-      background: var(--card);
-      border-radius: 14px;
-      padding: 16px 18px;
-      margin-bottom: 14px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
       display: flex;
       gap: 16px;
-      transition: transform 0.2s ease;
+      background: #fff;
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 14px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
     }
 
-    .event:hover {
-      transform: translateY(-2px);
-    }
-
-    /* HIGHLIGHT NEXT EVENT */
     .event.next {
       background: var(--highlight);
       border-left: 6px solid #e0b100;
@@ -95,16 +102,13 @@
 
     .event-date {
       min-width: 80px;
-      background: #eef2f7;
-      color: var(--primary);
-      border-radius: 10px;
-      font-weight: 700;
       text-align: center;
+      background: #eef2f7;
+      border-radius: 10px;
       padding: 10px 6px;
-      line-height: 1.2;
+      font-weight: 700;
+      color: var(--primary);
     }
-
-    .event-content { flex: 1; }
 
     .event-title {
       font-weight: 600;
@@ -113,35 +117,32 @@
 
     .event-note {
       font-size: 14px;
-      color: var(--muted);
+      color: var(--text-muted);
     }
 
-    /* FACEBOOK BUTTON */
+    footer {
+      text-align: center;
+      margin-top: 40px;
+    }
+
     .facebook-button {
       display: inline-block;
-      margin-top: 30px;
-      padding: 14px 24px;
+      margin-top: 24px;
+      padding: 14px 26px;
       background: #1877f2;
       color: #fff;
-      text-decoration: none;
       border-radius: 30px;
+      text-decoration: none;
       font-weight: 600;
-      transition: background 0.2s ease;
     }
 
     .facebook-button:hover {
       background: #145dc2;
     }
 
-    footer {
-      margin-top: 60px;
-      text-align: center;
-      font-size: 15px;
-      color: var(--muted);
-    }
-
+    /* MOBILE */
     @media (max-width: 600px) {
-      h1 { font-size: 24px; }
+      .hero h1 { font-size: 26px; }
       .event { flex-direction: column; }
       .event-date { align-self: flex-start; }
     }
@@ -150,106 +151,132 @@
 
 <body>
 
-<div class="container">
+<div class="page">
 
-  <!-- LOGO -->
-  <div class="logo">
-    <img src="logo.png.jpg" alt="Рух Християнських Сімей">
+  <!-- HERO -->
+  <div class="hero">
+    <img src="logo.png" alt="Рух Християнських Сімей">
+    <h1>Рух Християнських Сімей</h1>
+    <p>План зустрічей на перше півріччя 2026 року</p>
   </div>
 
-  <h1>План зустрічей на перше півріччя 2026 року</h1>
+  <!-- CONTENT -->
+  <div class="content">
 
-  <!-- СІЧЕНЬ -->
-  <div class="month">
-    <div class="month-title">Січень</div>
+    <!-- СІЧЕНЬ -->
+    <div class="month">
+      <div class="month-title">Січень</div>
 
-    <div class="event" data-date="2026-01-04">
-      <div class="event-date">04.01</div>
-      <div class="event-content">
-        <div class="event-title">Вертеп та коляда у Львові</div>
-      </div>
-    </div>
-
-    <div class="event" data-date="2026-01-18">
-      <div class="event-date">18.01</div>
-      <div class="event-content">
-        <div class="event-title">Вертеп та розколяда в спільноті</div>
-      </div>
-    </div>
-
-    <div class="event" data-date="2026-01-25">
-      <div class="event-date">25.01</div>
-      <div class="event-content">
-        <div class="event-title">Участь у парафіяльній розколяді</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ЛЮТИЙ -->
-  <div class="month">
-    <div class="month-title">Лютий</div>
-
-    <div class="event" data-date="2026-02-01">
-      <div class="event-date">01.02</div>
-      <div class="event-content">
-        <div class="event-title">
-          Вертеп та зустріч зі спільнотою церкви Св. Йосафата
+      <div class="event" data-date="2026-01-04">
+        <div class="event-date">04.01</div>
+        <div>
+          <div class="event-title">Вертеп та коляда у Львові</div>
         </div>
-        <div class="event-note">
-          Тема: «Весілля в Кані Галилейській»<br>
-          Спікери: Мар’ян та Ольга Гавалко
+      </div>
+
+      <div class="event" data-date="2026-01-18">
+        <div class="event-date">18.01</div>
+        <div>
+          <div class="event-title">Вертеп та розколяда в спільноті</div>
+        </div>
+      </div>
+
+      <div class="event" data-date="2026-01-25">
+        <div class="event-date">25.01</div>
+        <div>
+          <div class="event-title">Участь у парафіяльній розколяді</div>
         </div>
       </div>
     </div>
 
-    <div class="event" data-date="2026-02-15">
-      <div class="event-date">15.02</div>
-      <div class="event-content">
-        <div class="event-title">
-          Курс «Сім’я — домашня Церква», 1-ша тема
+    <!-- ЛЮТИЙ -->
+    <div class="month">
+      <div class="month-title">Лютий</div>
+
+      <div class="event" data-date="2026-02-01">
+        <div class="event-date">01.02</div>
+        <div>
+          <div class="event-title">Вертеп та зустріч зі спільнотою ц. Св. Йосафата</div>
+          <div class="event-note">
+            Тема: «Весілля в Кані Галилейській»<br>
+            Мар’ян та Ольга Гавалко
+          </div>
         </div>
-        <div class="event-note">о. Йоан Школик</div>
+      </div>
+
+      <div class="event" data-date="2026-02-15">
+        <div class="event-date">15.02</div>
+        <div>
+          <div class="event-title">Курс «Сім’я — домашня Церква», 1-ша тема</div>
+          <div class="event-note">о. Йоан Школик</div>
+        </div>
+      </div>
+
+      <div class="event" data-date="2026-02-20">
+        <div class="event-date">20.02</div>
+        <div>
+          <div class="event-title">Адорація</div>
+        </div>
       </div>
     </div>
 
-    <div class="event" data-date="2026-02-20">
-      <div class="event-date">20.02</div>
-      <div class="event-content">
-        <div class="event-title">Адорація</div>
+    <!-- БЕРЕЗЕНЬ -->
+    <div class="month">
+      <div class="month-title">Березень</div>
+
+      <div class="event" data-date="2026-02-28">
+        <div class="event-date">28.02–01.03</div>
+        <div><div class="event-title">Реколекції для сімей</div></div>
+      </div>
+
+      <div class="event" data-date="2026-03-13">
+        <div class="event-date">13–15.03</div>
+        <div><div class="event-title">Реколекції (Львів)</div></div>
+      </div>
+
+      <div class="event" data-date="2026-03-15">
+        <div class="event-date">15.03</div>
+        <div><div class="event-title">Перегляд фільму</div></div>
+      </div>
+
+      <div class="event" data-date="2026-03-22">
+        <div class="event-date">22.03</div>
+        <div>
+          <div class="event-title">Хресна Дорога</div>
+          <div class="event-note">Страдч</div>
+        </div>
+      </div>
+
+      <div class="event" data-date="2026-03-29">
+        <div class="event-date">29.03</div>
+        <div>
+          <div class="event-title">Зустріч сімей з Патріархом</div>
+          <div class="event-note">м. Київ</div>
+        </div>
       </div>
     </div>
+
+    <footer>
+      <div>Щочетверга о 18:30 — <b>Lectio Divina</b></div>
+
+      <a href="https://www.facebook.com/groups/258049066659625"
+         target="_blank"
+         class="facebook-button">
+        Приєднуйтеся до нас у Facebook
+      </a>
+    </footer>
+
   </div>
-
-  <footer>
-    <div>
-      Щочетверга о 18:30 — читання Святого Письма у форматі <strong>Lectio Divina</strong>
-    </div>
-
-    <a href="https://www.facebook.com/groups/258049066659625"
-       target="_blank"
-       class="facebook-button">
-      Приєднуйтеся до нас у Facebook
-    </a>
-  </footer>
-
 </div>
 
-<!-- SCRIPT: highlight nearest event -->
 <script>
   const today = new Date().toISOString().split('T')[0];
   const events = document.querySelectorAll('.event[data-date]');
-
-  let nextEvent = null;
-
-  events.forEach(event => {
-    const eventDate = event.dataset.date;
-    if (eventDate >= today && !nextEvent) {
-      nextEvent = event;
+  for (const e of events) {
+    if (e.dataset.date >= today) {
+      e.classList.add('next');
+      break;
     }
-  });
-
-  if (nextEvent) {
-    nextEvent.classList.add('next');
   }
 </script>
 
