@@ -8,25 +8,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; }
 
     body {
+      margin: 0;
       font-family: 'Inter', sans-serif;
       background:
         linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)),
-        url('background.png') center / cover no-repeat fixed;
+        url('1.jpg') center / cover no-repeat fixed;
       color: #1f2937;
     }
 
-    /* HEADER */
     .header {
       padding: 32px 16px 24px;
       text-align: center;
@@ -34,7 +26,7 @@
     }
 
     .header h1 {
-      margin: 0 0 8px;
+      margin: 0 0 6px;
       font-size: 28px;
     }
 
@@ -44,7 +36,6 @@
       opacity: 0.95;
     }
 
-    /* CONTENT */
     .wrapper {
       padding: 0 16px 80px;
     }
@@ -59,11 +50,11 @@
     }
 
     .month {
-      margin-bottom: 40px;
+      margin-bottom: 42px;
     }
 
     .month h2 {
-      margin: 0 0 16px;
+      margin: 0 0 18px;
       font-size: 20px;
       display: flex;
       align-items: center;
@@ -112,7 +103,7 @@
 
     footer {
       text-align: center;
-      margin-top: 32px;
+      margin-top: 36px;
       font-size: 14px;
       color: #6b7280;
     }
@@ -128,7 +119,6 @@
       font-weight: 600;
     }
 
-    /* BACK TO TOP */
     .top {
       position: fixed;
       right: 16px;
@@ -145,7 +135,6 @@
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.25s;
-      z-index: 20;
     }
 
     .top.show {
@@ -168,85 +157,96 @@
 </div>
 
 <div class="wrapper">
-  <div class="card">
+<div class="card">
 
-    <!-- СІЧЕНЬ -->
-    <div class="month">
-      <h2>Січень</h2>
+<!-- СІЧЕНЬ -->
+<div class="month">
+<h2>Січень</h2>
+<div class="event" data-date="2026-01-04"><div class="date">04.01</div><div class="title">Вертеп та коляда у Львові</div></div>
+<div class="event" data-date="2026-01-18"><div class="date">18.01</div><div class="title">Вертеп та розколяда в спільноті</div></div>
+<div class="event" data-date="2026-01-25"><div class="date">25.01</div><div class="title">Участь у парафіяльній розколяді</div></div>
+</div>
 
-      <div class="event" data-date="2026-01-04">
-        <div class="date">04.01</div>
-        <div class="title">Вертеп та коляда у Львові</div>
-      </div>
+<!-- ЛЮТИЙ -->
+<div class="month">
+<h2>Лютий</h2>
+<div class="event" data-date="2026-02-01"><div class="date">01.02</div><div><div class="title">Вертеп та зустріч зі спільнотою ц. Св. Йосафата</div><div class="note">Тема: «Весілля в Кані Галилейській». Мар’ян та Ольга Гавалко</div></div></div>
+<div class="event" data-date="2026-02-15"><div class="date">15.02</div><div><div class="title">Курс «Сім’я — домашня Церква», 1-ша тема</div><div class="note">о. Йоан Школик</div></div></div>
+<div class="event" data-date="2026-02-20"><div class="date">20.02</div><div class="title">Адорація</div></div>
+</div>
 
-      <div class="event" data-date="2026-01-18">
-        <div class="date">18.01</div>
-        <div class="title">Вертеп та розколяда в спільноті</div>
-      </div>
+<!-- БЕРЕЗЕНЬ -->
+<div class="month">
+<h2>Березень</h2>
+<div class="event"><div class="date">28.02–01.03</div><div class="title">Реколекції для сімей</div></div>
+<div class="event"><div class="date">13–15.03</div><div class="title">Реколекції (Львів)</div></div>
+<div class="event"><div class="date">15.03</div><div class="title">Фільм</div></div>
+<div class="event"><div class="date">22.03</div><div class="title">Хресна Дорога (Страдч)</div></div>
+<div class="event"><div class="date">27.03</div><div class="title">Хресна Дорога на парафії</div></div>
+<div class="event"><div class="date">29.03</div><div class="title">Зустріч сімей з Патріархом (Київ)</div></div>
+</div>
 
-      <div class="event" data-date="2026-01-25">
-        <div class="date">25.01</div>
-        <div class="title">Участь у парафіяльній розколяді</div>
-      </div>
-    </div>
+<!-- КВІТЕНЬ -->
+<div class="month">
+<h2>Квітень</h2>
+<div class="event"><div class="date">05.04</div><div class="title">Зустріч спільноти</div></div>
+</div>
 
-    <!-- ЛЮТИЙ -->
-    <div class="month">
-      <h2>Лютий</h2>
+<!-- ТРАВЕНЬ -->
+<div class="month">
+<h2>Травень</h2>
+<div class="event"><div class="date">03.05</div><div class="title">Презентація РХС + «Весілля в Кані Галилейській» (парафія)</div></div>
+<div class="event"><div class="date">17.05</div><div class="title">День сім’ї (Львів)</div></div>
+<div class="event"><div class="date">22.05</div><div class="title">Адорація</div></div>
+<div class="event"><div class="date">24.05</div><div class="title">День сім’ї (парафія)</div></div>
+</div>
 
-      <div class="event" data-date="2026-02-01">
-        <div class="date">01.02</div>
-        <div>
-          <div class="title">Вертеп та зустріч зі спільнотою ц. Св. Йосафата</div>
-          <div class="note">Тема: «Весілля в Кані Галилейській». Мар’ян та Ольга Гавалко</div>
-        </div>
-      </div>
+<!-- ЧЕРВЕНЬ -->
+<div class="month">
+<h2>Червень</h2>
+<div class="event"><div class="date">07.06</div><div class="title">Курс «Сім’я — домашня Церква», 2-га тема</div></div>
+<div class="event"><div class="date">21.06</div><div class="title">Виїзд на природу (День батька)</div></div>
+<div class="event"><div class="date">—</div><div class="title">Форум сімей</div></div>
+</div>
 
-      <div class="event" data-date="2026-02-15">
-        <div class="date">15.02</div>
-        <div>
-          <div class="title">Курс «Сім’я — домашня Церква», 1-ша тема</div>
-          <div class="note">о. Йоан Школик</div>
-        </div>
-      </div>
+<!-- ЛИПЕНЬ -->
+<div class="month">
+<h2>Липень</h2>
+<div class="event"><div class="date">—</div><div class="title">Табір для сімей</div></div>
+</div>
 
-      <div class="event" data-date="2026-02-20">
-        <div class="date">20.02</div>
-        <div class="title">Адорація</div>
-      </div>
-    </div>
+<!-- СЕРПЕНЬ -->
+<div class="month">
+<h2>Серпень</h2>
+<div class="event"><div class="date">16.08</div><div class="title">Піша проща сімей та Хресна Дорога (с. Бендюга)</div></div>
+</div>
 
-    <footer>
-      <div>Щочетверга о 18:30 — <b>Lectio Divina</b></div>
-      <a class="facebook" href="https://www.facebook.com/groups/258049066659625" target="_blank">
-        Приєднуйтеся до нас у Facebook
-      </a>
-    </footer>
+<footer>
+<div>Щочетверга о 18:30 — <b>Lectio Divina</b></div>
+<a class="facebook" href="https://www.facebook.com/groups/258049066659625" target="_blank">
+Приєднуйтеся до нас у Facebook
+</a>
+</footer>
 
-  </div>
+</div>
 </div>
 
 <div class="top" id="top">↑</div>
 
 <script>
-  const topBtn = document.getElementById('top');
+const topBtn = document.getElementById('top');
+window.addEventListener('scroll', () => {
+  topBtn.classList.toggle('show', window.scrollY > 300);
+});
+topBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  window.addEventListener('scroll', () => {
-    topBtn.classList.toggle('show', window.scrollY > 300);
-  });
-
-  topBtn.onclick = () =>
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-
-  const today = new Date().toISOString().split('T')[0];
-  const events = document.querySelectorAll('.event[data-date]');
-  for (const e of events) {
-    if (e.dataset.date >= today) {
-      e.classList.add('next');
-      setTimeout(() => e.scrollIntoView({ behavior: 'smooth', block: 'center' }), 400);
-      break;
-    }
+const today = new Date().toISOString().split('T')[0];
+document.querySelectorAll('.event[data-date]').forEach(e => {
+  if (!document.querySelector('.event.next') && e.dataset.date >= today) {
+    e.classList.add('next');
+    e.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
+});
 </script>
 
 </body>
