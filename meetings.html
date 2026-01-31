@@ -14,28 +14,27 @@
     }
 
     html, body {
-      height: 100%;
       margin: 0;
+      padding: 0;
     }
 
     body {
       font-family: 'Inter', sans-serif;
       background:
         linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)),
-        url('background.png') center / cover no-repeat;
+        url('background.png') center / cover no-repeat fixed;
       color: #1f2937;
-      overflow: hidden; /* body НЕ скролиться */
     }
 
     /* HEADER */
     .header {
-      padding: 24px 16px 20px;
+      padding: 32px 16px 24px;
       text-align: center;
       color: #fff;
     }
 
     .header h1 {
-      margin: 0 0 6px;
+      margin: 0 0 8px;
       font-size: 28px;
     }
 
@@ -45,18 +44,15 @@
       opacity: 0.95;
     }
 
-    /* SCROLL AREA */
-    .scroll {
-      height: calc(100vh - 96px);
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
+    /* CONTENT */
+    .wrapper {
       padding: 0 16px 80px;
     }
 
     .card {
       max-width: 900px;
       margin: 0 auto;
-      background: rgba(255,255,255,0.95);
+      background: rgba(255,255,255,0.96);
       border-radius: 20px;
       padding: 24px;
       box-shadow: 0 16px 32px rgba(0,0,0,0.25);
@@ -124,7 +120,7 @@
     .facebook {
       display: inline-block;
       margin-top: 20px;
-      padding: 12px 24px;
+      padding: 14px 28px;
       background: #1877f2;
       color: #fff;
       text-decoration: none;
@@ -136,7 +132,7 @@
     .top {
       position: fixed;
       right: 16px;
-      bottom: 20px;
+      bottom: 24px;
       width: 44px;
       height: 44px;
       border-radius: 50%;
@@ -149,6 +145,7 @@
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.25s;
+      z-index: 20;
     }
 
     .top.show {
@@ -170,7 +167,7 @@
   <p>План зустрічей на перше півріччя 2026 року</p>
 </div>
 
-<div class="scroll" id="scroll">
+<div class="wrapper">
   <div class="card">
 
     <!-- СІЧЕНЬ -->
@@ -219,8 +216,6 @@
       </div>
     </div>
 
-    <!-- (інші місяці додаються так само, структура стабільна) -->
-
     <footer>
       <div>Щочетверга о 18:30 — <b>Lectio Divina</b></div>
       <a class="facebook" href="https://www.facebook.com/groups/258049066659625" target="_blank">
@@ -234,14 +229,14 @@
 <div class="top" id="top">↑</div>
 
 <script>
-  const scroll = document.getElementById('scroll');
   const topBtn = document.getElementById('top');
 
-  scroll.addEventListener('scroll', () => {
-    topBtn.classList.toggle('show', scroll.scrollTop > 300);
+  window.addEventListener('scroll', () => {
+    topBtn.classList.toggle('show', window.scrollY > 300);
   });
 
-  topBtn.onclick = () => scroll.scrollTo({ top: 0, behavior: 'smooth' });
+  topBtn.onclick = () =>
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 
   const today = new Date().toISOString().split('T')[0];
   const events = document.querySelectorAll('.event[data-date]');
